@@ -1,0 +1,105 @@
+package task_01;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class task2  extends JFrame implements ActionListener{
+
+	Container c = getContentPane();
+	JLabel l1=new JLabel("First No:");
+	JLabel l2=new JLabel("Second No:");
+	JLabel l3=new JLabel(" Result:");
+	JTextField tf1=new JTextField(20);
+	JTextField tf2=new JTextField(18);
+	JTextField tf3=new JTextField(20);
+	JButton add=new JButton("    +   ");
+	JButton sub=new JButton("    -  ");
+	JButton mul=new JButton("    x  ");
+	JButton div=new JButton("    /  ");
+	
+	task2(){
+		setSize(300,200);
+		setVisible(true);
+		c.setLayout(new FlowLayout());
+		c.add(l1);
+		c.add(tf1);
+		c.add(l2);
+		c.add(tf2);
+		c.add(add);
+		c.add(sub);
+		c.add(mul);
+		String s2 = tf2.getText();
+		if(s2!="0") {
+		c.add(div);
+		}
+		c.add(div);
+		c.add(l3);
+		c.add(tf3);
+		add.addActionListener(this);
+		sub.addActionListener(this);
+		mul.addActionListener(this);
+		div.addActionListener(this);
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==add) {
+			String s1 = tf1.getText();
+			int n1 = Integer.parseInt(s1);
+			String s2 = tf2.getText();
+			int n2 = Integer.parseInt(s2);
+			int ans=n1+n2;
+			
+			String stans = new Integer(ans).toString();
+//			System.out.println(stans);
+			tf3.setText(stans);
+		}
+		if(e.getSource()==add) {
+			String s1 = tf1.getText();
+			int n1 = Integer.parseInt(s1);
+			String s2 = tf2.getText();
+			int n2 = Integer.parseInt(s2);
+			int ans=n1+n2;
+			
+			String stans = new Integer(ans).toString();
+//			System.out.println(stans);
+			tf3.setText(stans);
+		}
+		if(e.getSource()==sub) {
+			String s1 = tf1.getText();
+			int n1 = Integer.parseInt(s1);
+			String s2 = tf2.getText();
+			int n2 = Integer.parseInt(s2);
+			int ans=n1-n2;
+			String stans = new Integer(ans).toString();
+//			System.out.println(stans);
+			tf3.setText(stans);
+		}
+		if(e.getSource()==mul) {
+			String s1 = tf1.getText();
+			int n1 = Integer.parseInt(s1);
+			String s2 = tf2.getText();
+			int n2 = Integer.parseInt(s2);
+			int ans=n1*n2;
+			
+			String stans = new Integer(ans).toString();
+//			System.out.println(stans);
+			tf3.setText(stans);
+		}
+		if(e.getSource()==div) {
+			String s1 = tf1.getText();
+			int n1 = Integer.parseInt(s1);
+			String s2 = tf2.getText();
+			int n2 = Integer.parseInt(s2);
+			int ans=n1/n2;
+			
+			String stans = new Integer(ans).toString();
+//			System.out.println(stans);
+			tf3.setText(stans);
+		}
+		
+	}
+
+	public static void main(String []args) {
+		new task2();
+	}
+}
